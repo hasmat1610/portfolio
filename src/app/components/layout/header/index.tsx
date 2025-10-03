@@ -73,6 +73,7 @@ const Header = () => {
     <header
       id="header"
       className="fixed top-0 left-0 w-full z-50 shadow-header bg-white/70 backdrop-blur-[12px]"
+      role="banner"
     >
       <div className="py-5 relative">
         <div className="container">
@@ -97,19 +98,21 @@ const Header = () => {
             </div>
 
             {/* Desktop navigation */}
-            <nav className="hidden xl:block relative">
-              <ul className="flex items-center gap-x-6 xl:gap-x-10">
+            <nav className="hidden xl:block relative" aria-label="Primary">
+              <ul className="flex items-center gap-x-6 xl:gap-x-10" role="menubar">
                 {menuItems.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`text-base cursor-pointer font-medium capitalize py-2 relative z-0 
+                      className={`text-base cursor-pointer font-medium capitalize py-2 relative z-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white 
                         after:absolute after:left-0 after:bottom-0 after:h-0.5 after:transition-all after:duration-500
                         ${
                           activeSection === item.id
                             ? "text-blue-500 after:w-full after:bg-gradient-primary"
                             : "text-secondary-color dark:text-white-color after:w-0 hover:after:w-full after:bg-gradient-primary"
                         }`}
+                      aria-current={activeSection === item.id ? "page" : undefined}
+                      role="menuitem"
                     >
                       {item.label}
                     </button>
@@ -122,7 +125,10 @@ const Header = () => {
             <div className="xl:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="flex flex-col gap-1.5"
+                className="flex flex-col gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 <span className="w-6 h-0.5 bg-black"></span>
                 <span className="w-6 h-0.5 bg-black"></span>
@@ -137,17 +143,21 @@ const Header = () => {
           className={`absolute left-0 top-full w-full bg-secondary-color dark:bg-dark-color xl:hidden transition-all duration-300 ${
             isMobileMenuOpen ? "block" : "hidden"
           }`}
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
         >
           <div className="container py-5">
             <ul className="flex flex-col gap-y-4">
               {menuItems.map((item) => (
                 <li key={item.id}>
                   <button
-                    className={`text-2xl uppercase leading-tight py-4 block transition-colors duration-300 ${
+                    className={`text-2xl uppercase leading-tight py-4 block transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-secondary-color ${
                       activeSection === item.id
                         ? "text-primary-color"
                         : "text-white-color hover:text-primary-color"
                     }`}
+                    aria-current={activeSection === item.id ? "page" : undefined}
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       scrollToSection(item.id);

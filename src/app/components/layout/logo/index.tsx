@@ -4,8 +4,8 @@ import Link from "next/link"
 const Logo = () => {
   return (
     <>
-        <Link href="/">
-            <Image src={"/images/logo/logo.svg"} alt="logo" width={70} height={70}/>
+        <Link href="/" aria-label="Go to homepage">
+            <Image src={"/images/logo/logo.svg"} alt="Hasmat Patel logo" width={70} height={70} priority />
         </Link>
     </>
   )

@@ -9,15 +9,13 @@ import LatestWork from "./components/home/latest-work"
 const page = () => {
   return (
     <>
-      <main>
-        <HeroSection />
-        <ContactBar />
-        <AboutMe />
-        <ExperienceSec />
-        <EducationSkills />
-        <LatestWork />
-        <Contact />
-      </main>
+      <HeroSection />
+      <ContactBar />
+      <AboutMe />
+      <ExperienceSec />
+      <EducationSkills />
+      <LatestWork />
+      <Contact />
     </>
   )
 }

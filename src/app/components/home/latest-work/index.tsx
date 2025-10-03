@@ -55,13 +55,13 @@ const colorClasses: Record<string, string> = {
 };
 
   return (
-    <section id="works" className="latest-work-section cv">
+    <section id="works" className="latest-work-section cv" aria-labelledby="latest-works-heading">
       <div className="bg-softGray">
         <div className="container">
           <div className="py-16 md:py-20">
             {/* Section Header */}
             <div className="flex items-center justify-between gap-2 border-b border-black/25 pb-7 mb-9 md:mb-16">
-              <h2>Latest Works</h2>
+              <h2 id="latest-works-heading">Latest Works</h2>
               <p className="text-base md:text-xl text-blue-500">
                 {/* ({workData.length.toString().padStart(2, "0")}) */}
                 ( 04 )
@@ -70,12 +70,14 @@ const colorClasses: Record<string, string> = {
 
             {/* Loading State */}
             {loading && (
-              <p className="text-center text-gray-500">Loading projects...</p>
+              <p className="text-center text-gray-500" role="status" aria-live="polite" aria-busy="true">
+                Loading projects...
+              </p>
             )}
 
             {/* Empty State */}
             {!loading && workData.length === 0 && (
-              <p className="text-center text-gray-500">
+              <p className="text-center text-gray-500" role="status" aria-live="polite">
                 No projects available at the moment.
               </p>
             )}
@@ -101,6 +103,9 @@ const colorClasses: Record<string, string> = {
                         // href={`/${slug}`}
                         href={website}
                         className="absolute inset-0 hidden group-hover:flex items-center justify-center rounded-lg bg-primary/15 backdrop-blur-sm"
+                        aria-label={`Open ${title}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <svg
                           width="65"
@@ -133,7 +138,9 @@ const colorClasses: Record<string, string> = {
                         <Link
                           href={website}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="flex items-center flex-wrap gap-3 group-hover:text-blue-500"
+                          aria-label={`Visit ${title} website`}
                         >
                           <h5>{title}</h5>
                           <ArrowRight className="h-6 w-6 transition-all duration-300" />
