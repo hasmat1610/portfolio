@@ -3,77 +3,170 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const LatestWork = () => {
-    const [workData, setWorkData] = useState<any>(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch('/api/work-data');
-                if (!res.ok) throw new Error('Failed to fetch');
-                const data = await res.json();
-                setWorkData(data?.workData);
-            } catch (error) {
-                console.error('Error fetching services:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    return (
-        <section id="projects" className="latest-work-section">
-            <div className="bg-softGray">
-                <div className="container">
-                    <div className="py-16 md:py-20">
-                        <div className="flex items-center justify-between gap-2 border-b border-black/25 pb-7 mb-9 md:mb-16">
-                            <h2>Latest Works</h2>
-                            <p className="text-xl text-blue-500">( 04 )</p>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-12">
-                            {workData?.map((value: any, index: any) => {
-                                return (
-                                    <div key={index} className="group flex flex-col gap-3 xl:gap-6">
-                                        <div className="relative">
-                                            <Image src={value?.image} alt="image" width={570} height={414} className="rounded-lg w-full h-[500px] object-cover" />
-                                            <Link
-                                                href={`${value.slug}`}
-                                                className="absolute top-0 left-0 backdrop-blur-xs bg-primary/15 w-full h-full hidden group-hover:flex rounded-lg"
-                                            >
-                                                <span className="flex justify-center items-center p-5 w-full">
-                                                    <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="0.333374" width="64" height="64" rx="32" fill="#2b7fff" />
-                                                        <path
-                                                            d="M25.6667 25.3333H39M39 25.3333V38.6666M39 25.3333L25.6667 38.6666"
-                                                            stroke="#FFFF"
-                                                            strokeWidth="2"
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                </span>
-                                            </Link>
-                                        </div>
-                                        <div className="flex flex-col gap-0 xl:gap-2">
-                                            <div className="flex items-center justify-between">
-                                                <Link href={`${value.WebSiteLink}`} target="_blank" className="flex flex-wrap gap-5 hover:text-blue-500">
-                                                    <h5>{value?.title}</h5>
-                                                    <Image src={"/images/icon/right-arrow-icon.svg"} alt="right-arrow-icon" width={30} height={30} />
-                                                </Link>
-                                            </div>
-                                            <div className="w-full">
-                                            <p>{value?.description}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+// Type for a project item
+interface Technology {
+  label: string;
+  color: string;
+}
+interface WorkItem {
+  image: string;
+  title: string;
+  description: string;
+  website: string;
+  technologies: Technology[];
+  slug: string;
 }
 
-export default LatestWork
+const LatestWork = () => {
+  const [workData, setWorkData] = useState<WorkItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/api/work-data");
+        if (!res.ok) throw new Error("Failed to fetch");
+        const data = await res.json();
+        setWorkData(data?.workData || []);
+      } catch (error) {
+        console.error("Error fetching work data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // simple color mapping → you can extend this
+const colorClasses: Record<string, string> = {
+    cgblue: "bg-gradient-to-tr from-[#61dafb] to-[#2a88bd]",
+    green: "bg-gradient-to-tr from-[#8cc84b] to-[#5a8030]",
+    purple: "bg-gradient-to-tr from-[#21759b] to-[#1a5773]",
+    lottie: "bg-gradient-to-tr from-[#00ddb3] to-[#009b7d]",
+    gsap: "bg-gradient-to-tr from-[#00d1b2] to-[#009982]",
+    blue: "bg-gradient-to-tr from-[#7952b3] to-[#553c80]",
+    azuredream: "bg-gradient-to-tr from-[#38bdf8] to-[#2563eb]",
+    pink: "bg-gradient-to-tr from-[#cd6799] to-[#9e4f74]",
+    black: "bg-gradient-to-tr from-[#333333] to-[#000000]",
+    orange: "bg-gradient-to-tr from-[#ff9f43] to-[#e67e22]",
+    yellow: "bg-gradient-to-tr from-[#f1c40f] to-[#d4ac0d]",
+};
+
+  return (
+    <section id="projects" className="latest-work-section">
+      <div className="bg-softGray">
+        <div className="container">
+          <div className="py-16 md:py-20">
+            {/* Section Header */}
+            <div className="flex items-center justify-between gap-2 border-b border-black/25 pb-7 mb-9 md:mb-16">
+              <h2>Latest Works</h2>
+              <p className="text-xl text-blue-500">
+                {/* ({workData.length.toString().padStart(2, "0")}) */}
+                ( 04 )
+              </p>
+            </div>
+
+            {/* Loading State */}
+            {loading && (
+              <p className="text-center text-gray-500">Loading projects...</p>
+            )}
+
+            {/* Empty State */}
+            {!loading && workData.length === 0 && (
+              <p className="text-center text-gray-500">
+                No projects available at the moment.
+              </p>
+            )}
+
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-12">
+              {workData.map(
+                ({ image, title, description, website, slug, technologies }) => (
+                  <div
+                    key={slug}
+                    className="group flex flex-col gap-3 xl:gap-6"
+                  >
+                    {/* Project Thumbnail */}
+                    <div className="relative">
+                      <Image
+                        src={image}
+                        alt={title}
+                        width={570}
+                        height={414}
+                        className="rounded-lg w-full h-[500px] object-cover"
+                      />
+                      <Link
+                        href={`/${slug}`}
+                        className="absolute inset-0 hidden group-hover:flex items-center justify-center rounded-lg bg-primary/15 backdrop-blur-sm"
+                      >
+                        <svg
+                          width="65"
+                          height="64"
+                          viewBox="0 0 65 64"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="0.333"
+                            width="64"
+                            height="64"
+                            rx="32"
+                            fill="#2b7fff"
+                          />
+                          <path
+                            d="M25.6667 25.3333H39M39 25.3333V38.6666M39 25.3333L25.6667 38.6666"
+                            stroke="#fff"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+
+                    {/* Project Content */}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href={website}
+                          target="_blank"
+                          className="flex flex-wrap gap-5 hover:text-blue-500"
+                        >
+                          <h5>{title}</h5>
+                          <Image
+                            src="/images/icon/right-arrow-icon.svg"
+                            alt="right arrow"
+                            width={30}
+                            height={30}
+                          />
+                        </Link>
+                      </div>
+                      <p className="text-gray-700">{description}</p>
+
+                      {/* Technologies Badges */}
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {technologies?.map((tech, idx) => (
+                          <span
+                            key={idx}
+                            className={`px-3 py-1 text-xs font-medium text-white rounded-full shadow-sm ${
+                              colorClasses[tech.color] || "bg-gray-600"
+                            }`}
+                          >
+                            {tech.label}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LatestWork;
