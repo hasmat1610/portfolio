@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { title } from "process";
 
 const contactBar = {
   contactItems: [

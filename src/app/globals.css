@@ -12,7 +12,7 @@ body {
   height: 100%;
 }
 
-button::before {
+.button::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -24,7 +24,7 @@ button::before {
   z-index: 0;
 }
 
-button:hover::before {
+.button:hover::before {
   height: 100%;
 }
 
@@ -163,6 +163,10 @@ button:hover::before {
     break-before: page;
     page-break-before: always;
   }
+}
+
+a, button {
+  transition: all 0.3s;
 }
 
 .hero-button-gradient {

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AboutMe = () => {
   return (
-    <section>
+    <section id="about" className="about-me-section">
       <div className="relative bg-softGray py-10 md:py-20">
         <div className="relative z-10">
           <div className="container">
@@ -11,8 +11,8 @@ const AboutMe = () => {
               <p className="text-xl text-blue-500">( 01 )</p>
             </div>
 
-            <div className="pt-10 xl:pt-16 flex gap-10 items-center justify-between">
-              <div className="w-[400px] h-[440px] hidden lg:flex">
+            <div className="pt-10 xl:pt-12 flex gap-10 items-center justify-between">
+              <div className="w-[400px] h-[440px] hidden lg:flex max-w-full">
                 <Image
                   src="/images/home/about-me/about-banner-img.svg"
                   alt="about-banner"
@@ -23,7 +23,7 @@ const AboutMe = () => {
               </div>
 
               <div className="w-full lg:max-w-3xl flex-1">
-                <div>
+                <div className="w-full text-justify text-base md:text-lg text-black">
                   <p>
                     <strong> Results-driven Senior Frontend Developer</strong>{" "}
                     with 7.5+ years of experience designing and developing
@@ -65,7 +65,7 @@ const AboutMe = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-3 py-10 xl:py-10 gap-5 border-b border-mistGray">
+                <div className="grid grid-cols-3 py-6 xl:py-8 gap-5 border-b border-mistGray">
                   {[
                     { count: "7.5+", label: "Years of experience" },
                     { count: "50+", label: "Happy Clients" },
@@ -80,7 +80,7 @@ const AboutMe = () => {
                   ))}
                 </div>
 
-                <div className="pt-8 xl:pt-10 flex flex-col sm:flex-row items-center gap-4">
+                <div className="pt-6 xl:pt-8 flex flex-col sm:flex-row items-center gap-4">
                   <div className="flex items-center gap-3.5">
                     <Image
                       src="/images/icon/lang-icon.svg"
@@ -94,7 +94,7 @@ const AboutMe = () => {
                     {["English", "Hindi", "Gujarati"].map((lang) => (
                       <p
                         key={lang}
-                        className="bg-white py-2 md:py-3.5 px-4 md:px-5 w-fit rounded-full text-base xl:text-xl"
+                        className="bg-white py-2 md:py-3 px-5 w-fit rounded-full text-base xl:text-xl"
                       >
                         {lang}
                       </p>

@@ -1,4 +1,5 @@
 "use client";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -54,7 +55,7 @@ const colorClasses: Record<string, string> = {
 };
 
   return (
-    <section id="projects" className="latest-work-section">
+    <section id="works" className="latest-work-section">
       <div className="bg-softGray">
         <div className="container">
           <div className="py-16 md:py-20">
@@ -93,11 +94,12 @@ const colorClasses: Record<string, string> = {
                         src={image}
                         alt={title}
                         width={570}
-                        height={414}
-                        className="rounded-lg w-full h-[500px] object-cover"
+                        height={360}
+                        className="rounded-lg w-full h-[360px] object-cover"
                       />
                       <Link
-                        href={`/${slug}`}
+                        // href={`/${slug}`}
+                        href={website}
                         className="absolute inset-0 hidden group-hover:flex items-center justify-center rounded-lg bg-primary/15 backdrop-blur-sm"
                       >
                         <svg
@@ -131,15 +133,10 @@ const colorClasses: Record<string, string> = {
                         <Link
                           href={website}
                           target="_blank"
-                          className="flex flex-wrap gap-5 hover:text-blue-500"
+                          className="flex items-center flex-wrap gap-3 group-hover:text-blue-500"
                         >
                           <h5>{title}</h5>
-                          <Image
-                            src="/images/icon/right-arrow-icon.svg"
-                            alt="right arrow"
-                            width={30}
-                            height={30}
-                          />
+                          <ArrowRight className="h-6 w-6 transition-all duration-300" />
                         </Link>
                       </div>
                       <p className="text-gray-700">{description}</p>

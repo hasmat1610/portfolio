@@ -21,7 +21,7 @@ const EducationSkills = () => {
     }, []);
 
     return (
-        <section>
+        <section id="education" className="education-skills-section">
             <div className="border-t border-softGray overflow-hidden">
                 <div className="container relative z-10">
                     <Image src={"/images/home/education-skill/edu-skill-vector.svg"} alt="vector" width={260} height={170} className="no-print absolute top-0 left-0 transform -translate-y-1/2" />
