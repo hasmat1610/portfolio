@@ -81,12 +81,12 @@ const Header = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
             <span
               onClick={scrollToTop}
-              className="logo cursor-pointer text-3xl font-semibold text-white-color"
+              className="logo cursor-pointer text-2xl lg:text-3xl font-semibold text-white-color"
             >
               Hasmat Patel
             </span>
 
-            <div className="hero-subtitle-gradient hover:hero-subtitle-hover relative inline-flex items-center gap-2 rounded-full px-4.5 py-2 text-sm font-medium text-white">
+            <div className="hero-subtitle-gradient hover:hero-subtitle-hover relative inline-flex items-center gap-2 rounded-full px-4.5 py-2 text-sm font-medium text-white max-md:hidden">
               <div className="relative">
                   <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   <div className="absolute inset-0 w-2 h-2 bg-white/60 rounded-full animate-ping"></div>
@@ -97,7 +97,7 @@ const Header = () => {
             </div>
 
             {/* Desktop navigation */}
-            <nav className="hidden lg:block relative">
+            <nav className="hidden xl:block relative">
               <ul className="flex items-center gap-x-6 xl:gap-x-10">
                 {menuItems.map((item) => (
                   <li key={item.id}>
@@ -119,7 +119,7 @@ const Header = () => {
             </nav>
 
             {/* Mobile menu button */}
-            <div className="lg:hidden">
+            <div className="xl:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="flex flex-col gap-1.5"
@@ -134,7 +134,7 @@ const Header = () => {
 
         {/* Mobile menu */}
         <div
-          className={`absolute left-0 top-full w-full bg-secondary-color dark:bg-dark-color lg:hidden transition-all duration-300 ${
+          className={`absolute left-0 top-full w-full bg-secondary-color dark:bg-dark-color xl:hidden transition-all duration-300 ${
             isMobileMenuOpen ? "block" : "hidden"
           }`}
         >

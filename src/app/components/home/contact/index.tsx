@@ -14,10 +14,10 @@ const Contact = () => {
           <span className="inline-block text-blue-500 font-medium text-base md:text-lg mb-2 tracking-wide">
             🌟 Let’s Collaborate
           </span>
-          <h2 className="text-white text-4xl md:text-4xl lg:text-8xl font-bold uppercase mb-6 leading-[1.1] tracking-tight">
+          <h2 className="text-white text-3xl md:text-6xl xl:text-8xl font-bold uppercase mb-6 leading-[1.1] tracking-tight">
             READY TO CREATE <br /> SOMETHING AMAZING?
           </h2>
-          <p className="text-2xl font-normal mb-12">
+          <p className="text-base lg:text-2xl font-normal mb-12 max-xl:max-w-[600px] max-xl:mx-auto">
 Turning Figma visions into pixel-perfect React.js, Next.js, and WordPress websites that delight users.
 </p>
 

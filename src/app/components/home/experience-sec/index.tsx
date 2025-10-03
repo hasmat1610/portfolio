@@ -39,23 +39,23 @@ const ExperienceSec = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between gap-2 border-b border-black/25 pb-7 mb-9 md:mb-16">
                         <h2>Experience</h2>
-                        <p className="text-xl text-blue-500">( 02 )</p>
+                        <p className="text-base md:text-xl text-blue-500">( 02 )</p>
                     </div>
 
                     <div className="space-y-7 md:space-y-12">
                         {experiences.map((exp, index) => (
                             <div key={index} className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 md:gap-4 xl:gap-8 items-start relative">
                                 <div className="">
-                                    <h3 className="text-4xl font-bold mb-2 text-black">{exp.year}</h3>
-                                    <h4 className="text-lg font-normal">{exp.title}</h4>
+                                    <h3 className="font-bold mb-1 lg:mb-2 text-black">{exp.year}</h3>
+                                    <h4 className="text-sm lg:text-lg font-normal">{exp.title}</h4>
                                 </div>
 
                                 <div className="relative">
                                     {index < experiences.length && (
-                                        <div className={`absolute left-0 top-3 w-px ${index < experiences.length - 1 ? 'h-50' : 'h-45'} bg-softGray`}></div>
+                                        <div className={`absolute max-md:hidden left-0 top-3 w-px ${index < experiences.length - 1 ? 'h-50' : 'h-45'} bg-softGray`}></div>
                                     )}
 
-                                    <div className="no-print absolute left-0 top-2 transform -translate-x-1/2">
+                                    <div className="no-print max-md:hidden absolute left-0 top-2 transform -translate-x-1/2">
                                         <div className={`no-print w-3.5 h-3.5 rounded-full border-1  flex items-center justify-center ${index === 2 ? 'border-primary bg-primary' : 'border-black/25 bg-white'
                                             }`}>
                                             {index === 2 && (
@@ -64,16 +64,16 @@ const ExperienceSec = () => {
                                         </div>
                                     </div>
 
-                                    <div className="pl-4 lg:pl-7">
+                                    <div className="pl-0 md:pl-4 lg:pl-7 max-md:pb-1">
                                         <div className="flex items-center gap-2 mb-1">
-                                            <span className="text-xl text-black font-normal">{exp.company}</span>
+                                            <span className="text-base lg:text-xl text-black font-normal">{exp.company}</span>
                                         </div>
-                                        <p className="text-base font-normal">{exp.type}</p>
+                                        <p className="text-sm lg:text-base font-normal">{exp.type}</p>
                                     </div>
                                 </div>
 
-                                <div className="pl-8 sm:pl-0">
-                                    <p className="leading-relaxed text-base">{exp.description}</p>
+                                <div className="pl-0">
+                                    <p className="leading-relaxed text-sm lg:text-base">{exp.description}</p>
                                 </div>
                             </div>
                         ))}

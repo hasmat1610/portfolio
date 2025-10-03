@@ -8,11 +8,11 @@ const AboutMe = () => {
           <div className="container">
             <div className="flex items-center justify-between gap-2 border-b border-black/25 pb-7">
               <h2>About Me</h2>
-              <p className="text-xl text-blue-500">( 01 )</p>
+              <p className="text-base md:text-xl text-blue-500">( 01 )</p>
             </div>
 
-            <div className="pt-10 xl:pt-12 flex gap-10 items-center justify-between">
-              <div className="w-[400px] h-[440px] hidden lg:flex max-w-full">
+            <div className="pt-4 lg:pt-10 xl:pt-12 flex max-lg:flex-wrap gap-2 lg:gap-10 items-center justify-between">
+              <div className="w-[400px] h-[440px] flex md:hidden lg:flex max-w-full max-md:h-full">
                 <Image
                   src="/images/home/about-me/about-banner-img.svg"
                   alt="about-banner"
@@ -23,7 +23,7 @@ const AboutMe = () => {
               </div>
 
               <div className="w-full lg:max-w-3xl flex-1">
-                <div className="w-full text-justify text-base md:text-lg text-black">
+                <div className="w-full text-justify text-base xl:text-lg text-black">
                   <p>
                     <strong> Results-driven Senior Frontend Developer</strong>{" "}
                     with 7.5+ years of experience designing and developing
@@ -65,7 +65,7 @@ const AboutMe = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-3 py-6 xl:py-8 gap-5 border-b border-mistGray">
+                <div className="grid grid-cols-2 lg:grid-cols-3 py-6 xl:py-8 gap-3 xl:gap-5 border-b border-mistGray">
                   {[
                     { count: "7.5+", label: "Years of experience" },
                     { count: "50+", label: "Happy Clients" },
@@ -73,7 +73,7 @@ const AboutMe = () => {
                   ].map((item, i) => (
                     <div key={i}>
                       <h3>{item.count}</h3>
-                      <p className="text-base md:text-lg text-black">
+                      <p className="text-xs lg:text-base xl:text-lg text-black">
                         {item.label}
                       </p>
                     </div>
@@ -94,7 +94,7 @@ const AboutMe = () => {
                     {["English", "Hindi", "Gujarati"].map((lang) => (
                       <p
                         key={lang}
-                        className="bg-white py-2 md:py-3 px-5 w-fit rounded-full text-base xl:text-xl"
+                        className="bg-white py-2 xl:py-3 px-5 w-fit rounded-full text-sm md:text-base xl:text-xl"
                       >
                         {lang}
                       </p>

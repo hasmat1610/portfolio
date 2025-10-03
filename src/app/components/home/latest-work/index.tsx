@@ -62,7 +62,7 @@ const colorClasses: Record<string, string> = {
             {/* Section Header */}
             <div className="flex items-center justify-between gap-2 border-b border-black/25 pb-7 mb-9 md:mb-16">
               <h2>Latest Works</h2>
-              <p className="text-xl text-blue-500">
+              <p className="text-base md:text-xl text-blue-500">
                 {/* ({workData.length.toString().padStart(2, "0")}) */}
                 ( 04 )
               </p>
@@ -81,7 +81,7 @@ const colorClasses: Record<string, string> = {
             )}
 
             {/* Projects Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10 xl:gap-y-12">
               {workData.map(
                 ({ image, title, description, website, slug, technologies }) => (
                   <div
@@ -95,7 +95,7 @@ const colorClasses: Record<string, string> = {
                         alt={title}
                         width={570}
                         height={360}
-                        className="rounded-lg w-full h-[360px] object-cover"
+                        className="rounded-lg w-full h-[250px] md:h-[260px] lg:h-[360px] object-cover"
                       />
                       <Link
                         // href={`/${slug}`}
