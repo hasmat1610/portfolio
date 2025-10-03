@@ -8,7 +8,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative z-10 bg-black bg-[url('/images/home/grid-shape.webp')] bg-center bg-no-repeat bg-cover bg-fixed">
+    <section id="contact" className="relative z-10 bg-black bg-[url('/images/home/grid-shape.webp')] bg-center bg-no-repeat bg-cover bg-fixed max-md:min-h-[calc(100dvh-180px)] max-md:flex max-md:items-center">
       <div className="relative z-10 py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <span className="inline-block text-blue-500 font-medium text-base md:text-lg mb-2 tracking-wide">

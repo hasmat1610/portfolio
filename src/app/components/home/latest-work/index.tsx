@@ -142,7 +142,7 @@ const colorClasses: Record<string, string> = {
                           className="flex items-center flex-wrap gap-3 group-hover:text-blue-500"
                           aria-label={`Visit ${title} website`}
                         >
-                          <h5>{title}</h5>
+                          <h3 className="text-lg md:text-xl xl:text-2xl font-semibold">{title}</h3>
                           <ArrowRight className="h-6 w-6 transition-all duration-300" />
                         </Link>
                       </div>

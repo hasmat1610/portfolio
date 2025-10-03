@@ -71,7 +71,7 @@
   }
 
   p {
-    @apply text-sm lg:text-base text-secondary;
+    @apply text-sm lg:text-base text-[#525252];
   }
 }
 
