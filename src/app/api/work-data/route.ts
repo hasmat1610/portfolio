@@ -17,7 +17,7 @@ const TECHNOLOGIES = {
 
 const workData = [
   {
-    image: "/images/work/collegeease.jpg",
+    image: "/images/work/collegeease.webp",
     title: "CollegeEase",
     description: 
             "A comprehensive platform revolutionizing college admissions counseling. CollegeEase empowers Independent Educational Consultants (IECs) with AI-driven tools, streamlined workflows, and automated progress tracking to enhance student success rates in college applications.",
@@ -44,7 +44,7 @@ const workData = [
     slug: "modenx",
   },
   {
-    image: "/images/work/theomkargroup.jpg",
+    image: "/images/work/theomkargroup.webp",
     title: "The Omkar Group",
     description: 
             "A leading construction and real estate development company known for architectural excellence and sustainable building practices. Delivering premium residential and commercial projects with cutting-edge technology and environmental consciousness.",
@@ -53,7 +53,7 @@ const workData = [
     slug: "theomkargroup",
   },
   {
-    image: "/images/work/divorcex.jpg",
+    image: "/images/work/divorcex.webp",
     title: "DivorceX",
     description:
             "An innovative AI-powered co-parenting platform designed to minimize conflict and optimize child-centric decisions. DivorceX uses advanced algorithms to facilitate communication, schedule management, and dispute resolution for separated parents.",
@@ -62,7 +62,7 @@ const workData = [
     slug: "divorcex",
   },
   {
-    image: "/images/work/insyd.jpg",
+    image: "/images/work/insyd.webp",
     title: "Insyd",
     description:
             "A revolutionary mental health-focused social platform providing a safe, anonymous space for authentic self-expression. Featuring AI-driven support systems and community-building tools to promote emotional well-being.",

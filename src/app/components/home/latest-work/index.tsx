@@ -95,7 +95,7 @@ const colorClasses: Record<string, string> = {
                         alt={title}
                         width={570}
                         height={360}
-                        className="rounded-lg w-full h-[250px] md:h-[260px] lg:h-[360px] object-cover"
+                        className="rounded-lg w-full h-[260px] md:h-[300px] lg:h-[420px] object-cover"
                       />
                       <Link
                         // href={`/${slug}`}
