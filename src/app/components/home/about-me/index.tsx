@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AboutMe = () => {
   return (
-    <section id="about" className="about-me-section">
+    <section id="about" className="about-me-section cv">
       <div className="relative bg-softGray py-10 md:py-20">
         <div className="relative z-10">
           <div className="container">

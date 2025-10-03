@@ -55,7 +55,7 @@ const colorClasses: Record<string, string> = {
 };
 
   return (
-    <section id="works" className="latest-work-section">
+    <section id="works" className="latest-work-section cv">
       <div className="bg-softGray">
         <div className="container">
           <div className="py-16 md:py-20">

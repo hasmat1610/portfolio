@@ -34,7 +34,7 @@ const ExperienceSec = () => {
     ];
 
     return (
-        <section id='experience' className="experience-section">
+        <section id='experience' className="experience-section cv">
             <div className="py-16 md:py-20">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between gap-2 border-b border-black/25 pb-7 mb-9 md:mb-16">

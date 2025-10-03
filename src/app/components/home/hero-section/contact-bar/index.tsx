@@ -23,7 +23,7 @@ const ContactBar = () => {
   }, []);
 
   return (
-    <section className="bg-blue-50">
+    <section className="bg-blue-50 cv">
       <div className="border-t border-b border-[#ddd]">
         <div className="container">
           <div className="flex flex-row items-center justify-between gap-4 py-4 md:py-4">

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const index = () => {
   return (
-    <section className="relative hero-section overflow-hidden pt-30 pb-24 min-h-[calc(100vh-60px)] flex items-center">
+    <section className="relative hero-section overflow-hidden pt-30 pb-24 min-h-[calc(100vh-60px)] flex items-center cv">
       <div className="container">
         <div className="lg:flex grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-4 items-center">
           <div className="flex flex-col gap-4 md:gap-7 w-full xl:max-w-5xl">
