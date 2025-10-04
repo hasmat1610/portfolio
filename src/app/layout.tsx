@@ -27,7 +27,9 @@ export const metadata: Metadata = {
     "Performance Optimization",
     "Portfolio"
   ],
-  author: "Hasmat Patel",
+  authors: [
+    { name: "Hasmat Patel" }
+  ],
   robots: "index, follow",
 };
 
