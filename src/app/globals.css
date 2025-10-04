@@ -55,7 +55,7 @@
   }
 
   h3 {
-    @apply text-lg lg:text-3xl xl:text-5xl font-semibold;
+    @apply text-lg lg:text-3xl xl:text-4xl font-semibold;
   }
 
   h4 {
