@@ -27,9 +27,11 @@ Turning Figma visions into pixel-perfect React.js, Next.js, and WordPress websit
             {socialLinks.map((social, index) => (
               <div key={index} className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-300">
                 <Link
-                href={social.url}
+                  href={social.url}
                   className="hero-button-gradient inline-flex items-center gap-2 md:gap-3 rounded-full px-5 py-2.5 md:px-7 md:py-3.5 text-sm md:text-base font-medium text-white transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   aria-label={social.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span>{social.name}</span>
                   <ArrowRight className="w-5 h-5" />

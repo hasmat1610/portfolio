@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <>
         <Link href="/" aria-label="Go to homepage">
-            <Image src={"/images/logo/logo.svg"} alt="Hasmat Patel logo" width={70} height={70} priority />
+            <Image src={"/images/logo/logo.svg"} alt="Hasmat Patel" width={70} height={70} priority />
         </Link>
     </>
   )

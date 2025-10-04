@@ -25,6 +25,8 @@ const index = () => {
                 <Link
                   href="/hasmat-resume.pdf"
                   download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hero-button-gradient inline-flex items-center gap-2 md:gap-3 rounded-full px-5 py-2.5 md:px-7 md:py-3.5 text-sm md:text-base font-medium text-white transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:scale-105 active:scale-95"
                 >
                   <Download className="w-4.5 h-4.5 md:w-5 md:h-5" />

@@ -15,7 +15,7 @@ const AboutMe = () => {
               <div className="w-[400px] h-[440px] flex md:hidden lg:flex max-w-full max-md:h-full">
                 <Image
                   src="/images/home/about-me/about-banner-img.svg"
-                  alt="about-banner"
+                  alt="about banner"
                   width={400}
                   height={440}
                   className="w-full h-full"
