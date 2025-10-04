@@ -14,14 +14,11 @@ const index = () => {
                   Hi! I’m{" "}
                   <strong className="font-semibold">Hasmat Patel.</strong>
                 </h1>
-                <div className="wave">
-                  {/* <Image src={"/images/home/banner/wave-icon.svg"} alt="wave-icon" width={62} height={62} className=""/> */}
-                </div>
               </div>
-              <h2 className="text-[28px] md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-[85px] font-semibold leading-tight">Sr. Front End Developer</h2>
+              <h2 className="text-[28px] md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-[85px] font-semibold leading-tight">Senior UI Developer</h2>
             </div>
             <p className="text-base lg:text-2xl font-normal mb-2">
-              Turning ideas into powerful, <br className="md:hidden" /> pixel-perfect experiences.
+               Crafting responsive, pixel-perfect, and accessible web interfaces for over 7.6 years. <br /> Expert in UI/UX design, component-based development, and performance-optimized design-to-code workflows, delivering intuitive digital experiences.
             </p>
             <div>
               <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-300">

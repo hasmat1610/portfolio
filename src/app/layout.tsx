@@ -10,8 +10,25 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Hasmat Portfolio",
-  description: "Hasmat Patel Portfolio",
+  title: "Hasmat Patel | Senior UI Developer & UI/UX Specialist | 7.6 Years Experience",
+  description: "Portfolio of Hasmat Patel, Senior UI Developer with 7.6 years of experience. Showcases responsive, pixel-perfect, and accessible web interfaces, UI/UX design, component-based development, and performance-optimized projects.",
+  keywords: [
+    "Hasmat Patel",
+    "UI Developer",
+    "Frontend Developer",
+    "UI/UX Designer",
+    "React.js",
+    "Next.js",
+    "HTML5 CSS3",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Responsive Web Design",
+    "Web Accessibility",
+    "Performance Optimization",
+    "Portfolio"
+  ],
+  author: "Hasmat Patel",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
